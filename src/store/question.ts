@@ -14,6 +14,13 @@ interface State {
 }
 
 // el create tiene que recibir un callback, y en el callback tenes que devolver un objeto que va a ser el estado global. El set es para actualizar el estado y el get para leerlo
+
+// ACLARACIONES: 
+
+// el persist nos sirve para PERSISTIR los datos dentro de nuestro localStorage (por defecto, si no debajo del name podemos especificarle donde guardar los datos). Y como devuelve una funcion, debemos agregar los () luego del create<state> para que no se queje ts
+
+// el devtools nos permite utilizar el redux devtools que instalamos como extension en el navegador y asi poder ver todos los pasos que fuimos haciendo cuando fuimos jugando con la app
+
 export const useQuestionsStore = create<State>()(
   devtools(
     persist(
@@ -86,8 +93,4 @@ export const useQuestionsStore = create<State>()(
   )
 );
 
-// ACLARACIONES: 
 
-// el persist nos sirve para PERSISTIR los datos dentro de nuestro localStorage (por defecto, si no debajo del name podemos especificarle donde guardar los datos). Y como devuelve una funcion, debemos agregar los () luego del create<state> para que no se queje ts
-
-// el devtools nos permite utilizar el redux devtools que instalamos como extension en el navegador y asi poder ver todos los pasos que fuimos haciendo cuando fuimos jugando con la app
